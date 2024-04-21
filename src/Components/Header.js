@@ -75,6 +75,9 @@ const TodoList = () => {
           Add Todo
         </button>
       </div>
+      <div className="note-count">
+        Total Notes: {todos.length}
+      </div>
       <ul className="todo-list">
         {todos.map((todo, index) => (
           <li key={index} className={`todo-item ${todo.completed ? 'completed' : ''}`}>
@@ -87,23 +90,20 @@ const TodoList = () => {
             <button className="delete-button" onClick={() => handleDeleteTodo(index)}>
               Delete
             </button>
+            {deleteIndex === index && (
+              <div className="delete-confirmation" onClick={handleCancelDelete}>
+                <p>Are you sure you want to delete this todo?</p>
+                <button className="confirm-delete" onClick={handleConfirmDelete}>
+                  Confirm
+                </button>
+                <button className="cancel-delete" onClick={handleCancelDelete}>
+                  Cancel
+                </button>
+              </div>
+            )}
           </li>
         ))}
       </ul>
-      <div className="note-count">
-        Total Notes: {todos.length}
-      </div>
-      {deleteIndex !== null && (
-        <div className="delete-confirmation">
-          <p>Are you sure you want to delete this todo?</p>
-          <button className="confirm-delete" onClick={handleConfirmDelete}>
-            Confirm
-          </button>
-          <button className="cancel-delete" onClick={handleCancelDelete}>
-            Cancel
-          </button>
-        </div>
-      )}
     </div>
   );
 };

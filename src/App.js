@@ -9,9 +9,9 @@ function App() {
   return (
     <>
     <Header/>
-    <Todos/>
+    {/* <Todos/>
     <TodoItem/>
-    <Footer/>
+    <Footer/> */}
     </>
   );
 }
