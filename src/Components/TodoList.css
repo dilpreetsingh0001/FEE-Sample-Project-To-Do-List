@@ -87,12 +87,23 @@ h1 {
   background-color: #E72929; /* Darker Red on Hover */
 }
 
-.note-count {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 18px;
-  color: #666; /* Dark Grey */
+.note-count-container {
+  text-align: center; /* Center the content horizontally */
 }
+
+.note-count {
+  display: inline-block; /* Maintain original position */
+  padding: 8px 16px; /* Adjust padding as needed */
+  /* margin-top: 20px; */
+  margin-bottom: 10px;
+  font-size: 18px;
+  background-color: #666; /* Set desired background color */
+  color: #fff; /* Set text color */
+  border-radius: 20px; /* Round corners */
+  cursor: pointer; /* Change cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
 
 .delete-confirmation {
   background-color: #A2B5BB; /* White */
@@ -106,7 +117,7 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 90%; /* Ensure the confirmation fits well on smaller screens */
-  width: 300px; /* Adjust width as needed */
+  width: 342px; /* Adjust width as needed */ 
   text-align: center; /* Center text */
 }
 
@@ -126,6 +137,7 @@ h1 {
   transition: background-color 0.3s ease;
   width: 100px; /* Adjust button width as needed */
   display: inline-block; /* Make buttons display inline */
+  margin-right: 5px;
 }
 
 .confirm-delete:hover,
@@ -148,6 +160,7 @@ h1 {
   }
 
   .delete-confirmation {
+    /* width: 342px; */
     width: 90%; /* Adjust width for smaller screens */
     padding: 10px; /* Reduce padding for smaller screens */
   }

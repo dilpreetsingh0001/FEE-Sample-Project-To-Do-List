@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './TodoList.css'; // Import your CSS file for styling
 
-const TodoList = () => {
+const Header = () => {
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [deleteIndex, setDeleteIndex] = useState(null);
@@ -75,8 +75,10 @@ const TodoList = () => {
           Add Todo
         </button>
       </div>
-      <div className="note-count">
-        Total Notes: {todos.length}
+      <div className="note-count-container">
+        <div className="note-count">
+          Total Notes: {todos.length}
+        </div>
       </div>
       <ul className="todo-list">
         {todos.map((todo, index) => (
@@ -108,4 +110,4 @@ const TodoList = () => {
   );
 };
 
-export default TodoList;
+export default Header;
